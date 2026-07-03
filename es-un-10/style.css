@@ -1,7 +1,8 @@
 body {
   font-family: "Outfit", sans-serif;
   background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   user-select: none;
   -webkit-user-select: none;
 }
