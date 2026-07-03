@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>TODISE - Previa Pro 🎲🍻</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght400;600;800&family=Syne:wght800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="h-screen w-screen overflow-hidden text-white font-jakarta select-none bg-gradient-animated todise-theme flex flex-col justify-between p-6"
+  >
+    <!-- PANTALLA DE BIENVENIDA -->
+    <div
+      id="splash-screen"
+      class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-950 px-6 text-center transition-all duration-500"
+    >
+      <div class="absolute inset-0 bg-radial-glow opacity-30"></div>
+      <div class="relative z-10 max-w-sm w-full">
+        <h1 class="font-syne text-6xl tracking-tighter mb-2 text-slate-200">
+          TODIS<span
+            class="inline-block text-amber-500 font-black transform scale-125 rotate-12 origin-bottom ml-1 drop-shadow-[0_0_20px_rgba(245,158,11,0.6)]"
+            >E</span
+          >
+        </h1>
+        <p
+          class="text-sm font-semibold tracking-widest uppercase text-slate-500 mb-12"
+        >
+          Edición Previa Hardcore
+        </p>
+        <button
+          onclick="startGameEngine()"
+          class="w-full py-5 bg-gradient-to-r from-amber-500 via-orange-500 to-red-600 text-slate-950 font-black text-xl rounded-full shadow-2xl shadow-orange-500/20 hover:shadow-orange-500/40 transform active:scale-95 transition-all uppercase tracking-widest"
+        >
+          Empezar Juego 🚀
+        </button>
+      </div>
+    </div>
+
+    <!-- CONTROL SUPERIOR -->
+    <div class="w-full max-w-md mx-auto flex flex-col items-center gap-2 pt-2">
+      <h1 class="font-syne text-3xl tracking-tighter text-slate-200">
+        TODIS<span
+          class="inline-block text-amber-500 font-black transform scale-110 rotate-12 ml-0.5"
+          >E</span
+        >
+      </h1>
+
+      <label
+        class="inline-flex items-center cursor-pointer bg-black/40 backdrop-blur px-4 py-2.5 rounded-full border border-white/5 shadow-lg"
+      >
+        <span
+          class="mr-3 text-[10px] font-black tracking-widest uppercase text-amber-400"
+          id="mode-label-text"
+          >MODO PARES</span
+        >
+        <div class="relative">
+          <input
+            type="checkbox"
+            id="mode-logic-toggle"
+            class="sr-only peer"
+            onchange="toggleGameModeLogic()"
+          />
+          <div
+            class="w-11 h-6 bg-slate-900 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500 shadow-inner"
+          ></div>
+        </div>
+      </label>
+    </div>
+
+    <!-- MATRIZ FIJA RECIPIENTE -->
+    <div class="w-full max-w-xl mx-auto grid grid-cols-6 gap-2 mt-4 px-2">
+      <div
+        id="letter-T"
+        class="bg-white/5 border border-white/5 rounded-2xl py-4 text-center transition-all duration-300"
+      >
+        <span class="block font-syne text-2xl md:text-3xl opacity-20 text-white"
+          >T</span
+        >
+        <span
+          class="text-[9px] uppercase tracking-wider font-bold block mt-1 opacity-30 text-slate-400"
+          id="sub-T"
+          >2</span
+        >
+      </div>
+      <div
+        id="letter-O"
+        class="bg-white/5 border border-white/5 rounded-2xl py-4 text-center transition-all duration-300"
+      >
+        <span class="block font-syne text-2xl md:text-3xl opacity-20 text-white"
+          >O</span
+        >
+        <span
+          class="text-[9px] uppercase tracking-wider font-bold block mt-1 opacity-30 text-slate-400"
+          id="sub-O"
+          >4</span
+        >
+      </div>
+      <div
+        id="letter-D"
+        class="bg-white/5 border border-white/5 rounded-2xl py-4 text-center transition-all duration-300"
+      >
+        <span class="block font-syne text-2xl md:text-3xl opacity-20 text-white"
+          >D</span
+        >
+        <span
+          class="text-[9px] uppercase tracking-wider font-bold block mt-1 opacity-30 text-slate-400"
+          id="sub-6"
+          >6</span
+        >
+      </div>
+      <div
+        id="letter-I"
+        class="bg-white/5 border border-white/5 rounded-2xl py-4 text-center transition-all duration-300"
+      >
+        <span class="block font-syne text-2xl md:text-3xl opacity-20 text-white"
+          >I</span
+        >
+        <span
+          class="text-[9px] uppercase tracking-wider font-bold block mt-1 opacity-30 text-slate-400"
+          id="sub-I"
+          >8</span
+        >
+      </div>
+      <div
+        id="letter-S"
+        class="bg-white/5 border border-white/5 rounded-2xl py-4 text-center transition-all duration-300"
+      >
+        <span class="block font-syne text-2xl md:text-3xl opacity-20 text-white"
+          >S</span
+        >
+        <span
+          class="text-[9px] uppercase tracking-wider font-bold block mt-1 opacity-30 text-slate-400"
+          id="sub-S"
+          >10</span
+        >
+      </div>
+      <div
+        id="letter-E"
+        class="bg-white/5 border border-white/5 rounded-2xl py-4 text-center transition-all duration-300"
+      >
+        <span class="block font-syne text-2xl md:text-3xl opacity-20 text-white"
+          >E</span
+        >
+        <span
+          class="text-[9px] uppercase tracking-wider font-bold block mt-1 opacity-30 text-slate-400"
+          id="sub-E"
+          >12</span
+        >
+      </div>
+    </div>
+
+    <!-- NUEVO: CUADRO DE TEXTO DINÁMICO (REEMPLAZA AL POPOVER) -->
+    <div
+      class="w-full max-w-md h-36 mx-auto my-auto flex items-center justify-center bg-black/40 border border-white/5 p-4 rounded-2xl backdrop-blur relative overflow-hidden"
+    >
+      <div
+        id="action-text-container"
+        class="w-full text-center opacity-0 transition-opacity duration-200"
+      >
+        <span
+          id="action-badge"
+          class="px-2.5 py-0.5 rounded-full text-[9px] font-black tracking-widest uppercase mb-2 inline-block"
+        ></span>
+        <p
+          id="action-text-payload"
+          class="text-sm md:text-base font-bold leading-relaxed text-slate-200 px-2"
+        ></p>
+      </div>
+      <!-- Estado inicial sutil -->
+      <div
+        id="action-placeholder"
+        class="absolute inset-0 flex items-center justify-center text-slate-600 text-xs font-semibold tracking-wider uppercase"
+      >
+        Esperando lanzamiento... 🎲
+      </div>
+    </div>
+
+    <!-- PANEL DEL CONTADOR DEL TERROR -->
+    <div
+      class="w-full max-w-xs mx-auto flex flex-col items-center gap-3 bg-black/30 border border-white/5 p-4 rounded-2xl backdrop-blur mb-4"
+    >
+      <span
+        class="text-[10px] uppercase tracking-widest font-black text-slate-500"
+        id="danger-counter-label"
+        >Castigo Acumulado (Lleva 0)</span
+      >
+      <div class="flex gap-4">
+        <div
+          id="hazard-dot-1"
+          class="w-5 h-5 rounded-full bg-slate-900 border border-white/5 transition-all duration-300 shadow-inner"
+        ></div>
+        <div
+          id="hazard-dot-2"
+          class="w-5 h-5 rounded-full bg-slate-900 border border-white/5 transition-all duration-300 shadow-inner"
+        ></div>
+        <div
+          id="hazard-dot-3"
+          class="w-5 h-5 rounded-full bg-slate-900 border border-white/5 transition-all duration-300 shadow-inner"
+        ></div>
+      </div>
+    </div>
+
+    <!-- PANEL INFERIOR: DADOS REALISTAS Y LANZADOR -->
+    <div class="w-full max-w-sm mx-auto flex flex-col items-center gap-4 pb-2">
+      <div class="flex gap-8 justify-center items-center">
+        <!-- DADO 1 (Blanco con puntos) -->
+        <div
+          id="die-box-1"
+          class="w-16 h-16 bg-gradient-to-br from-white to-slate-200 rounded-2xl shadow-2xl grid grid-cols-3 grid-rows-3 p-2.5 gap-1 transform transition-all duration-200"
+        >
+          <!-- Los 9 puntos posibles (se controlan por JS) -->
+          <div class="dot bg-slate-950 rounded-full opacity-0"></div>
+          <div class="dot bg-slate-950 rounded-full opacity-0"></div>
+          <div class="dot bg-slate-950 rounded-full opacity-0"></div>
+          <div class="dot bg-slate-950 rounded-full opacity-0"></div>
+          <div class="dot bg-slate-950 rounded-full opacity-100"></div>
+          <!-- Centro para el 1 -->
+          <div class="dot bg-slate-950 rounded-full opacity-0"></div>
+          <div class="dot bg-slate-950 rounded-full opacity-0"></div>
+          <div class="dot bg-slate-950 rounded-full opacity-0"></div>
+          <div class="dot bg-slate-950 rounded-full opacity-0"></div>
+        </div>
+
+        <!-- DADO 2 (Blanco con puntos) -->
+        <div
+          id="die-box-2"
+          class="w-16 h-16 bg-gradient-to-br from-white to-slate-200 rounded-2xl shadow-2xl grid grid-cols-3 grid-rows-3 p-2.5 gap-1 transform transition-all duration-200"
+        >
+          <div class="dot bg-slate-950 rounded-full opacity-0"></div>
+          <div class="dot bg-slate-950 rounded-full opacity-0"></div>
+          <div class="dot bg-slate-950 rounded-full opacity-0"></div>
+          <div class="dot bg-slate-950 rounded-full opacity-0"></div>
+          <div class="dot bg-slate-950 rounded-full opacity-100"></div>
+          <!-- Centro para el 1 -->
+          <div class="dot bg-slate-950 rounded-full opacity-0"></div>
+          <div class="dot bg-slate-950 rounded-full opacity-0"></div>
+          <div class="dot bg-slate-950 rounded-full opacity-0"></div>
+          <div class="dot bg-slate-950 rounded-full opacity-0"></div>
+        </div>
+      </div>
+
+      <button
+        onclick="rollDiceEngine()"
+        id="dice-roll-btn"
+        class="w-full h-14 py-4.5 bg-gradient-to-r from-amber-500 via-orange-500 to-red-600 text-slate-950 font-black text-lg rounded-full shadow-xl transform active:scale-95 transition-all uppercase tracking-widest"
+      >
+        Lanzar Dados 🎲
+      </button>
+    </div>
+
+    <!-- AVISO DE ORIENTACIÓN -->
+    <div
+      id="orientation-blocker"
+      class="hidden fixed inset-0 z-[100] bg-slate-950 flex flex-col items-center justify-center p-6 text-center"
+    >
+      <div class="font-syne text-4xl mb-4 text-amber-400 animate-bounce">
+        📱 🔄
+      </div>
+      <p class="font-extrabold text-lg text-slate-200">¡Gira tu teléfono!</p>
+      <p class="text-xs text-slate-500 max-w-xs mt-2">
+        Optimizado exclusivamente de forma vertical para la comodidad de la
+        ronda.
+      </p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

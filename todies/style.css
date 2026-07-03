@@ -1,0 +1,156 @@
+.font-jakarta {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.font-syne {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+}
+
+@keyframes gradientMovement {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.bg-gradient-animated {
+  background-size: 400% 400%;
+  animation: gradientMovement 20s ease-in-out infinite;
+}
+.todise-theme {
+  background-image: linear-gradient(-45deg, #050409, #0f0a07, #120505, #020204);
+}
+.bg-radial-glow {
+  background: radial-gradient(
+    circle,
+    rgba(245, 158, 11, 0.15) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+}
+
+/* ANIMACIONES DE IRRUPCIÓN DENTRO DEL CUADRO */
+@keyframes inlineSlideUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.anim-inline-up {
+  animation: inlineSlideUp 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.15) forwards;
+}
+
+@keyframes inlineSlideDown {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.anim-inline-down {
+  animation: inlineSlideDown 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.15)
+    forwards;
+}
+
+@keyframes inlineSlideLeft {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.anim-inline-left {
+  animation: inlineSlideLeft 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.15)
+    forwards;
+}
+
+@keyframes inlineSlideRight {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.anim-inline-right {
+  animation: inlineSlideRight 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.15)
+    forwards;
+}
+
+@keyframes inlineExplosion {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.anim-inline-boom {
+  animation: inlineExplosion 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes diceShake {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(-4px, 3px) rotate(-8deg);
+  }
+  40% {
+    transform: translate(4px, -3px) rotate(8deg);
+  }
+  60% {
+    transform: translate(-3px, -1px) rotate(-5deg);
+  }
+  80% {
+    transform: translate(3px, 2px) rotate(5deg);
+  }
+}
+.dice-rolling-shake {
+  animation: diceShake 0.12s ease-in-out infinite;
+}
+
+/* Transición suave para que los puntos aparezcan/desaparezcan con estilo */
+.dot {
+  transition: opacity 0.1s ease-in-out;
+}
+
+@keyframes diceShake {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(-4px, 3px) rotate(-8deg);
+  }
+  40% {
+    transform: translate(4px, -3px) rotate(8deg);
+  }
+  60% {
+    transform: translate(-3px, -1px) rotate(-5deg);
+  }
+  80% {
+    transform: translate(3px, 2px) rotate(5deg);
+  }
+}
+.dice-rolling-shake {
+  animation: diceShake 0.12s ease-in-out infinite;
+}

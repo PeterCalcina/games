@@ -1,0 +1,79 @@
+body {
+  font-family: "Outfit", sans-serif;
+  background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.title-font {
+  font-family: "Fredoka", sans-serif;
+}
+
+/* 1. Animación Waving lenta e infinita */
+@keyframes waving {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1.5deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+}
+.animate-waving {
+  animation: waving 4.5s ease-in-out infinite;
+}
+
+/* 2. Animación del Contador (Duplica tamaño y se desvanece) */
+@keyframes countdownBeat {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+.animate-countdown {
+  animation: countdownBeat 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* 3. Animaciones de la Carta (Entrada y Salida Izquierda) */
+@keyframes cardSlideIn {
+  0% {
+    transform: translateX(120%) rotate(15deg) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+.card-enter {
+  animation: cardSlideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
+}
+
+@keyframes cardSlideOut {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-150%) rotate(-20deg);
+    opacity: 0;
+  }
+}
+.card-exit {
+  animation: cardSlideOut 0.4s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+}
+
+/* Mantiene la carta siempre vertical y proporcionada en cualquier giro */
+.card-ratio {
+  aspect-ratio: 2.5 / 3.5;
+  max-height: 65vh;
+  max-width: 85vw;
+}

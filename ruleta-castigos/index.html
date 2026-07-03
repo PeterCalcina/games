@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruleta de Castigos Colectivos 🎡🍻</title>
+    <!-- Tailwind CSS for utility styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body class="h-screen w-screen overflow-hidden text-white font-jakarta select-none bg-gradient-animated roulette-theme flex items-center justify-center">
+
+    <!-- SCREEN 1: LANDING & RULES -->
+    <div id="landing-screen" class="w-full max-w-md px-6 text-center flex flex-col items-center justify-center relative z-10 animate-fade-in">
+        <h1 class="font-syne text-4xl md:text-5xl uppercase tracking-tight leading-none mb-4 drop-shadow-md">
+            RULETA DE <span class="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-500 to-red-500">CASTIGOS</span>
+        </h1>
+        <p class="text-slate-300/80 mb-10 text-sm leading-relaxed">
+            Un juego donde el azar decide quién toma. Nadie está a salvo, las reglas aplican para fracciones del grupo al mismo tiempo. ¡Preparen los vasos!
+        </p>
+        <button onclick="startGame()" class="w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-black text-xl rounded-full shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transform active:scale-95 transition-all uppercase tracking-wider">
+            Comenzar Fiesta 🎉
+        </button>
+    </div>
+
+    <!-- SCREEN 2: MAIN GAME (WHEEL ARCHITECTURE) -->
+    <div id="game-screen" class="hidden w-full h-full flex flex-col items-center justify-center px-4 relative z-10 text-center">
+        
+        <h2 id="roulette-instruction-title" class="font-syne text-2xl md:text-3xl uppercase tracking-widest text-amber-400 mb-8 drop-shadow-sm animate-pulse-slow">
+            ¡Gira la ruleta! 🎡
+        </h2>
+
+        <!-- Wheel Structural Container Layer -->
+        <div class="relative w-72 h-72 md:w-80 md:h-80 flex items-center justify-center mb-10 transition-transform duration-500">
+            <!-- Absolute Top Pointer Indicator Indicator -->
+            <div class="absolute -top-4 w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-t-[28px] border-t-amber-400 drop-shadow-[0_4px_10px_rgba(245,158,11,0.5)] z-30"></div>
+            
+            <!-- Rotating Wheel Wrapper -->
+            <div id="wheel-element" class="w-full h-full rounded-full border-8 border-slate-900/80 shadow-[0_0_50px_rgba(245,158,11,0.15)] overflow-hidden relative transition-transform cubic-bezier-wheel bg-slate-900">
+                <!-- Slices are generated canvas style via internal Javascript on load -->
+            </div>
+
+            <!-- Glowing Center Hub Trigger Button -->
+            <button onclick="spinWheel()" id="center-spin-btn" class="absolute w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-600 text-slate-950 font-black text-xs uppercase tracking-widest rounded-full shadow-2xl border-4 border-slate-950 flex items-center justify-center z-20 transform hover:scale-105 active:scale-95 transition-all">
+                GIRAR
+            </button>
+        </div>
+        
+        <p class="text-xs text-slate-400/60 uppercase tracking-widest">Presiona el centro o gira para detonar un castigo</p>
+    </div>
+
+    <!-- DIALOG POPOVER MODAL LAYER -->
+    <div id="punishment-popover" class="hidden fixed inset-0 w-full h-full bg-slate-950/70 backdrop-blur-md flex items-center justify-center px-6 z-50">
+        <div class="w-full max-w-md bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-amber-500/30 p-8 rounded-3xl shadow-[0_0_60px_rgba(245,158,11,0.25)] text-center transform scale-90 opacity-0 transition-all duration-300 relative overflow-hidden" id="popover-content">
+            
+            <!-- Confetti abstract visual layers -->
+            <div class="absolute -top-12 -left-12 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl"></div>
+            <div class="absolute -bottom-12 -right-12 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl"></div>
+
+            <span class="px-4 py-1 rounded-full text-xs font-black tracking-widest uppercase bg-red-500/20 text-red-400 border border-red-500/30 mb-4 inline-block animate-bounce">
+                ¡Castigo Colectivo! 🚨
+            </span>
+
+            <p id="punishment-output-text" class="text-xl md:text-2xl font-extrabold font-jakarta leading-relaxed text-white my-6 drop-shadow-sm">
+                Texto del castigo aquí...
+            </p>
+
+            <button onclick="closePopover()" class="w-full mt-4 px-6 py-4 bg-white text-slate-950 font-black text-md rounded-full shadow-lg hover:bg-slate-100 transform active:scale-95 transition-all uppercase tracking-wider">
+                Siguiente Ronda 🎡
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
