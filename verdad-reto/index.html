@@ -14,7 +14,7 @@
     />
   </head>
   <body
-    class="min-h-screen w-screen overflow-x-hidden overflow-y-auto text-white font-outfit select-none bg-gradient-animated dynamic-bg normal-theme"
+    class="min-h-screen w-screen overflow-x-hidden overflow-y-auto text-white font-outfit select-none bg-gradient-animated dynamic-bg normal-theme flex flex-col"
   >
     <a href="../index.html" class="absolute top-4 left-4 inline-flex items-center justify-center w-11 h-11 rounded-full bg-black/40 text-white shadow-lg hover:bg-black/60 transition-all z-50" aria-label="Ir al inicio">🏠</a>
     <div
@@ -70,7 +70,7 @@
 
     <div
       id="choice-screen"
-      class="hidden h-full w-full flex flex-col relative z-10 animate-fade-in"
+      class="hidden min-h-screen h-full w-full flex flex-col relative z-10 animate-fade-in"
     >
       <button
         onclick="selectOption('dare')"
@@ -108,7 +108,7 @@
 
     <div
       id="prompt-screen"
-      class="hidden h-full w-full flex flex-col items-center justify-center px-6 relative z-10 text-center animate-fade-in"
+      class="hidden min-h-screen h-full w-full flex flex-col items-center justify-center px-6 relative z-10 text-center animate-fade-in"
     >
       <h2
         id="prompt-type-title"
