@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Central de juegos para disfrutar con amigos."
+    />
+    <meta name="keywords" content="TODISE, juegos para tomar, previa" />
+    <meta name="author" content="Peter Calcina" />
+    <meta name="theme-color" content="#0d0614" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tudominio.com/" />
+    <meta property="og:title" content="La Previa Suprema 🍻" />
+    <meta
+      property="og:description"
+      content="El ecosistema definitivo para tus noches de fiesta. TODISE, Yo Nunca Nunca y más."
+    />
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:image" content="preview-card.jpg" />
+
+    <!-- Twitter / X -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://tu-usuario.github.io/tu-repositorio/"
+    />
+    <meta
+      property="twitter:title"
+      content="La Previa Suprema 🍻"
+    />
+    <meta
+      property="twitter:description"
+      content="El ecosistema definitivo para tus noches de fiesta. TODISE, Yo Nunca Nunca y más. Desarrollado por Peter Calcina."
+    />
+    <meta property="twitter:image" content="preview-card.jpg" />
+    <title>La Previa Suprema 🍻</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Syne:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎲</text></svg>"
+    />
+    <style>
+      .font-jakarta {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .font-syne {
+        font-family: "Syne", sans-serif;
+        font-weight: 800;
+      }
+
+      /* Animación sutil de fondo para que la pantalla se sienta viva */
+      @keyframes slowShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .bg-party-animated {
+        background-image: linear-gradient(
+          -45deg,
+          #050409,
+          #0d0614,
+          #12050b,
+          #02040a
+        );
+        background-size: 400% 400%;
+        animation: slowShift 25s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-party-animated min-h-screen w-screen text-white font-jakarta select-none flex flex-col justify-between p-6"
+  >
+    <header class="w-full max-w-md mx-auto text-center pt-4">
+      <h1 class="font-syne text-4xl tracking-tighter text-slate-200">
+        C ENTRAL DE JUEGOS<span
+          class="inline-block text-amber-500 font-black transform scale-110 rotate-12 ml-1 drop-shadow-[0_0_15px_rgba(245,158,11,0.4)]"
+          >!</span
+        >
+      </h1>
+      <p
+        class="text-[10px] font-black tracking-widest uppercase text-slate-500 mt-1"
+      >
+        Elige tu veneno para esta noche
+      </p>
+    </header>
+
+    <main class="w-full max-w-md mx-auto my-auto py-6">
+      <section class="grid grid-cols-1 gap-4">
+        <a
+          href="todies/index.html"
+          class="group block bg-gradient-to-r from-amber-950/30 to-orange-950/20 border border-amber-500/30 rounded-2xl p-4 flex items-center justify-between shadow-[0_0_20px_rgba(0,0,0,0.4)] hover:border-amber-400 transform active:scale-98 transition-all duration-200"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="w-14 h-14 bg-amber-500/10 border border-amber-500/20 rounded-xl flex items-center justify-center text-3xl shadow-inner group-hover:bg-amber-500/20 transition-all"
+            >
+              🎲
+            </div>
+            <div>
+              <h2
+                class="font-syne text-lg text-amber-400 tracking-tight flex items-center gap-1"
+              >
+                TODIS<span
+                  class="inline-block text-white font-black transform rotate-12 scale-110"
+                  >E</span
+                >
+              </h2>
+              <p class="text-xs text-slate-400 mt-0.5">
+                El rey de los dados de bar. Cuidado con secar.
+              </p>
+            </div>
+          </div>
+          <span
+            class="text-amber-500/40 group-hover:text-amber-400 font-bold text-xl transition-all pr-1"
+            >→</span
+          >
+        </a>
+
+        <a
+          href="yo-nunca/index.html"
+          class="group block bg-gradient-to-r from-purple-950/30 to-slate-950/20 border border-purple-500/20 rounded-2xl p-4 flex items-center justify-between shadow-[0_0_20px_rgba(0,0,0,0.4)] hover:border-purple-400 transform active:scale-98 transition-all duration-200"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="w-14 h-14 bg-purple-500/10 border border-purple-500/20 rounded-xl flex items-center justify-center text-3xl shadow-inner group-hover:bg-purple-500/20 transition-all"
+            >
+              🤫
+            </div>
+            <div>
+              <h2 class="font-syne text-lg text-purple-400 tracking-tight">
+                Yo Nunca Nunca
+              </h2>
+              <p class="text-xs text-slate-400 mt-0.5">
+                Para confesar pecados. El que lo hizo, toma.
+              </p>
+            </div>
+          </div>
+          <span
+            class="text-purple-500/40 group-hover:text-purple-400 font-bold text-xl transition-all pr-1"
+            >→</span
+          >
+        </a>
+
+        <a
+          href="verdad-reto/index.html"
+          class="group block bg-gradient-to-r from-red-950/30 to-slate-950/20 border border-red-500/20 rounded-2xl p-4 flex items-center justify-between shadow-[0_0_20px_rgba(0,0,0,0.4)] hover:border-red-400 transform active:scale-98 transition-all duration-200"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="w-14 h-14 bg-red-500/10 border border-red-500/20 rounded-xl flex items-center justify-center text-3xl shadow-inner group-hover:bg-red-500/20 transition-all"
+            >
+              🌶️
+            </div>
+            <div>
+              <h2 class="font-syne text-lg text-red-400 tracking-tight">
+                Verdad o Reto
+              </h2>
+              <p class="text-xs text-slate-400 mt-0.5">
+                Preguntas incómodas o penitencias salvajes.
+              </p>
+            </div>
+          </div>
+          <span
+            class="text-red-500/40 group-hover:text-red-400 font-bold text-xl transition-all pr-1"
+            >→</span
+          >
+        </a>
+
+        <a
+          href="ruleta-castigos/index.html"
+          class="group block bg-gradient-to-r from-emerald-950/30 to-slate-950/20 border border-emerald-500/20 rounded-2xl p-4 flex items-center justify-between shadow-[0_0_20px_rgba(0,0,0,0.4)] hover:border-emerald-400 transform active:scale-98 transition-all duration-200"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="w-14 h-14 bg-emerald-500/10 border border-emerald-500/20 rounded-xl flex items-center justify-center text-3xl shadow-inner group-hover:bg-emerald-500/20 transition-all"
+            >
+              🎡
+            </div>
+            <div>
+              <h2 class="font-syne text-lg text-emerald-400 tracking-tight">
+                Ruleta Castigos
+              </h2>
+              <p class="text-xs text-slate-400 mt-0.5">
+                Gira el destino de la ronda. Azar puro.
+              </p>
+            </div>
+          </div>
+          <span
+            class="text-emerald-500/40 group-hover:text-emerald-400 font-bold text-xl transition-all pr-1"
+            >→</span
+          >
+        </a>
+
+        <a
+          href="es-un-10/index.html"
+          class="group block bg-gradient-to-r from-cyan-950/30 to-slate-950/20 border border-cyan-500/20 rounded-2xl p-4 flex items-center justify-between shadow-[0_0_20px_rgba(0,0,0,0.4)] hover:border-cyan-400 transform active:scale-98 transition-all duration-200"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="w-14 h-14 bg-cyan-500/10 border border-cyan-500/20 rounded-xl flex items-center justify-center text-3xl shadow-inner group-hover:bg-cyan-500/20 transition-all"
+            >
+              ✨
+            </div>
+            <div>
+              <h2 class="font-syne text-lg text-cyan-400 tracking-tight">
+                Es un 10... pero
+              </h2>
+              <p class="text-xs text-slate-400 mt-0.5">
+                Califica el dilema. Debate colectivo en la mesa.
+              </p>
+            </div>
+          </div>
+          <span
+            class="text-cyan-500/40 group-hover:text-cyan-400 font-bold text-xl transition-all pr-1"
+            >→</span
+          >
+        </a>
+      </section>
+    </main>
+
+    <footer
+      class="w-full max-w-md mx-auto text-center pb-2 flex flex-col gap-1"
+    >
+      <p
+        class="text-[9px] font-semibold text-slate-600 uppercase tracking-widest"
+      >
+        ⚠️ Juega con responsabilidad · Solo +18
+      </p>
+      <div class="text-[10px] font-medium text-slate-500 tracking-wide mt-1">
+        Hecho con
+        <span class="inline-block text-red-500 animate-pulse">❤️</span> para
+        <span class="font-extrabold text-slate-400">Magios Deck Society</span>
+      </div>
+      <p
+        class="text-[8px] font-bold text-slate-700 uppercase tracking-wider mt-0.5"
+      >
+        © 2026 Developed by Peter Calcina · With love for my friends
+      </p>
+    </footer>
+  </body>
+</html>
